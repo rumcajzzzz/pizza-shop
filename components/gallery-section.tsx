@@ -25,7 +25,7 @@ export function GallerySection() {
   ]
 
   return (
-    <section className="py-16 px-4 bg-muted/50">
+    <section className="py-16 px-4 bg-muted/50 fade-in-on-scroll">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-muted-foreground mb-4">Galeria</h2>
@@ -39,7 +39,7 @@ export function GallerySection() {
                   src={image.src || "/placeholder.svg"}
                   alt={image.alt}
                   fill
-                  className="object-cover transition-transform group-hover:scale-105"
+                  className="object-cover transition-transform group-hover:scale-105 fade-in-on-scroll"
                 />
               </div>
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">

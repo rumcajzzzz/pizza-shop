@@ -2,7 +2,7 @@ import { Facebook, Instagram, Twitter } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-muted text-foreground py-12 px-4 border-t">
+    <footer className="bg-muted text-foreground py-12 px-4 border-t fade-in-on-scroll">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>

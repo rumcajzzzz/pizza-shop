@@ -33,7 +33,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-16 px-4 bg-background">
+    <section id="contact" className="py-16 px-4 bg-background fade-in-on-scroll">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-muted-foreground mb-4">Kontakt</h2>
