@@ -2,23 +2,42 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
+interface WindowWithOdometer extends Window {
+  Odometer: new (options: {
+    el: HTMLElement;
+    value: number;
+    format?: string;
+    theme?: string;
+  }) => {
+    update: (value: number) => void;
+  };
+}
+
+interface HTMLElementWithOdometer extends HTMLElement {
+  _odometerInitialized?: boolean;
+}
+
+
+
+
 const OdometerLoader = () => {
   const pathname = usePathname();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const Odometer = (window as any).Odometer;
+
+      const Odometer = (window as any).Odometer as WindowWithOdometer['Odometer'];
       if (!Odometer) return;
 
-      const elements = document.querySelectorAll<HTMLElement>('.odometer[data-value]');
+      const elements = document.querySelectorAll<HTMLElementWithOdometer>('.odometer[data-value]');
 
       if (elements.length === 0) return;
 
       elements.forEach(el => {
         const finalValue = parseInt(el.getAttribute('data-value') || '0', 10);
 
-        if ((el as any)._odometerInitialized) return;
-
+        if (el._odometerInitialized) return;
+        el._odometerInitialized = true;
         el.innerHTML = '0';
 
         const odometer = new Odometer({
@@ -28,7 +47,7 @@ const OdometerLoader = () => {
           theme: 'default',
         });
 
-        (el as any)._odometerInitialized = true;
+        (el as HTMLElementWithOdometer)._odometerInitialized = true;
 
         setTimeout(() => {
           odometer.update(finalValue);
