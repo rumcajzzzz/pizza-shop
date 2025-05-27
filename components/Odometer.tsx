@@ -26,7 +26,8 @@ const OdometerLoader = () => {
   useEffect(() => {
     const interval = setInterval(() => {
 
-      const Odometer = (window as any).Odometer as WindowWithOdometer['Odometer'];
+      const win = window as unknown as WindowWithOdometer;
+      const Odometer = win.Odometer;
       if (!Odometer) return;
 
       const elements = document.querySelectorAll<HTMLElementWithOdometer>('.odometer[data-value]');
