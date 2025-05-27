@@ -8,6 +8,7 @@ import { Navbar } from "@/components/navbar"
 import FadeObserver from "@/components/FadeObserver";
 import OdometerLoader from "@/components/Odometer";
 import Script from "next/script"
+import ScrollReset from "@/components/ScrollReset"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -38,6 +39,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <ScrollReset />
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.min.js"
           strategy="beforeInteractive"

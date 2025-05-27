@@ -10,8 +10,7 @@ import { Minus, Plus, Trash2, ArrowLeft } from "lucide-react"
 export function CartPage() {
   const { items, updateQuantity, removeItem, getTotalPrice, clearCart } = useCartStore()
 
-  const handleCheckout = () => {
-    // Here you would integrate with Stripe
+  const handleCheckout = () => {  
     alert("Redirecting to Stripe Checkout...")
   }
 
@@ -23,8 +22,8 @@ export function CartPage() {
           <p className="text-muted-foreground mb-8">Dodaj troche pyszności żeby zacząć zamawiać!</p>
           <Link href="/">
             <Button className="bg-red-600 hover:bg-red-700">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Do Menu
+              <ArrowLeft className="w-4 h-4 mr-2 text-white" />
+              <p className="text-white">Do Menu</p>
             </Button>
           </Link>
         </div>
@@ -51,14 +50,15 @@ export function CartPage() {
               <Card key={item.id}>
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4">
-                    <div className="relative w-20 h-20">
+                  <div className="relative w-20 h-20 min-w-[80px]">
                       <Image
                         src={item.image_url || "/placeholder.svg?height=80&width=80"}
                         alt={item.name}
                         fill
                         className="object-cover rounded"
                       />
-                    </div>
+                  </div>
+
                     <div className="flex-1">
                       <h3 className="font-semibold text-lg">{item.name}</h3>
                       <p className="text-red-600 font-bold">{item.price.toFixed(2)}zł</p>
@@ -73,7 +73,7 @@ export function CartPage() {
                       </Button>
                     </div>
                     <Button size="sm" variant="destructive" onClick={() => removeItem(item.id)}>
-                      <Trash2 className="w-4 h-4" />
+                      <Trash2 className="w-4 h-4 dark:text-gray-500" />
                     </Button>
                   </div>
                 </CardContent>

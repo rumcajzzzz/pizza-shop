@@ -33,6 +33,7 @@ export function AboutSection() {
               alt="Kuchnia Mario&#39;s Pizza"
               fill
               className="object-cover rounded-lg fade-in-on-scroll"
+              priority
             />
           </div>
         </div>

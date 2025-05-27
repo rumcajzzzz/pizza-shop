@@ -40,6 +40,7 @@ export function GallerySection() {
                   alt={image.alt}
                   fill
                   className="object-cover transition-transform group-hover:scale-105 fade-in-on-scroll"
+                  priority
                 />
               </div>
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">

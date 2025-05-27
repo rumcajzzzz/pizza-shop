@@ -31,6 +31,7 @@ export function PizzaCard({ pizza }: PizzaCardProps) {
           alt={pizza.name}
           fill
           className="object-cover"
+          priority
         />
       </div>
       <CardContent className="p-6 flex-1 flex flex-col">

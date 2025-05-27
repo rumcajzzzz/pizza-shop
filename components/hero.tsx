@@ -11,12 +11,16 @@ export function Hero() {
           Autentyczna włoska pizza przygotowywana z miłością, świeżymi składnikami i tradycyjnymi recepturami przekazywanymi z pokolenia na pokolenie.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in-on-scroll">
-          <Button size="lg" className="border-white text-white hover:bg-white hover:text-red-600">
-            <Link href="#menu">Zamów teraz</Link>
-          </Button>
-          <Button size="lg" className="border-white text-white hover:bg-white hover:text-red-600">
-            <Link href="#about">Dowiedz się więcej</Link>
-          </Button>
+          <Link href="#menu">
+            <Button size="lg" className="border-white text-white hover:bg-white hover:text-red-600">
+              Zamów teraz
+            </Button>
+          </Link>
+          <Link href="#about">
+            <Button size="lg" className="border-white text-white hover:bg-white hover:text-red-600">
+              Dowiedz się więcej
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
