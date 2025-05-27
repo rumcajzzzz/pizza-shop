@@ -29,7 +29,7 @@ export function GallerySection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-muted-foreground mb-4">Galeria</h2>
-          <p className="text-xl text-muted-foreground">Zajrzyj za kulisy Mario's Pizza</p>
+          <p className="text-xl text-muted-foreground">Zajrzyj za kulisy Mario&#39;s Pizza</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {images.map((image, index) => (
